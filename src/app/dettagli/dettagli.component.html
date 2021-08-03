@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-5">
+    <div>
+        <h2>Descrizione:</h2>
+        
+        <p>{{films.description}}</p>
+        <br>
+
+        <h3>Direttore:</h3>
+        
+        <p>{{films.director}}</p>
+        <br>
+
+        <h3>Producer:</h3>
+        
+        <p>{{films.producer}}</p>
+        <br>
+
+        <h3>Durata:</h3>
+        
+        <p>{{films.running_time}}</p>
+        <br>
+
+        <ngb-rating [(rate)]="currentRate"></ngb-rating>
+        <hr>
+        <pre>Rate: <b>{{currentRate}}</b></pre>
+    </div>
+</div>
+

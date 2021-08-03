@@ -1,0 +1,21 @@
+<div class="container mt-5 mb-5 sfondo">
+    <form #loginform='ngForm' (ngSubmit)='login()'>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" required #email="ngModel" [(ngModel)]="user.email" 
+          placeholder="Inserisci la tua email" class="form-control" name="email" 
+          id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div class="alert alert-danger" [hidden]="email.valid"> The email is required </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" required #password="ngModel" [(ngModel)]="user.password"
+          placeholder="Scrivi la tua password"  
+          class="form-control" id="exampleInputPassword1">
+          <div class="alert alert-danger" [hidden]="password.valid"> The password is required </div>
+        </div>
+        <button type="submit" class="btn btn-success" >Login</button>
+      </form>
+</div>

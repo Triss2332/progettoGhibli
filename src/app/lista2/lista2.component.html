@@ -1,0 +1,36 @@
+<div *ngIf = "!errors">
+    <div class="container-fluid">
+        <div class="row col-12 justify-content-around">
+            <div class="card text-dark mb-3 mt-3 row-col-6 cardsfondo" style="width: 600px; height: 300px "
+                *ngFor="let film of films | slice: 11:21" [routerLink]="[film.id]">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img [src]="imagepath + film.id + '.jpg' " alt="..." height="300px">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title titolo">{{film.title}}</h5>
+                            <h5 class="card-title">{{film.original_title}}</h5>
+                            <p class="card-text">{{film.description | slice: 0:200}} [...]</p>
+                            <p class="card-text"><small class="text-muted">Data di uscita: {{film.release_date}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+                <li class="page-item">
+                    <a class="page-link " routerLink="/films" tabindex="-1" aria-disabled="true">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link " routerLink="/films">1</a></li>
+                <li class="page-item"><a class="page-link " routerLink="/lista2">2</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div *ngIf = "errors">{{errors}}</div>

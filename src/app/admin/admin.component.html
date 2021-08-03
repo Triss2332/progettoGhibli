@@ -1,0 +1,6 @@
+<div class="container sfondo mt-5 mb-5">
+    <h2>Lista degli Admin</h2>
+    <ul *ngFor="let tabella of person">
+        <li>{{ tabella.id }}. {{ tabella.firstName }} {{ tabella.lastName}}, {{ tabella.gender }}</li>
+    </ul>
+</div>

@@ -1,0 +1,45 @@
+<div class="container mt-5 mb-5 sfondo">
+    <form #registerform='ngForm' (ngSubmit)='register()'>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Nome</label>
+            <input type="text" required #firstName="ngModel" [(ngModel)]="user.firstName" 
+            placeholder="Inserisci il tuo nome" class="form-control" name="firstName" 
+            id="firstName" aria-describedby="nameHelp">
+            <div class="alert alert-danger" [hidden]="firstName.valid"> Nome richiesto </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Cognome</label>
+            <input type="text" required #lastName="ngModel" [(ngModel)]="user.lastName" 
+            placeholder="Inserisci il tuo cognome" class="form-control" name="lastName" 
+            id="lastName" aria-describedby="lastName">
+            <div class="alert alert-danger" [hidden]="lastName.valid"> Cognome richiesto </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <input type="text" required #gender="ngModel" [(ngModel)]="user.gender" placeholder="Inserisci il tuo genere (male/female)"
+                class="form-control" name="gender" id="lastNgenderame" aria-describedby="gender">
+            <div class="alert alert-danger" [hidden]="gender.valid"> The gender is required </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" required #email="ngModel" [(ngModel)]="user.email" 
+          placeholder="Inserisci la tua email" class="form-control" name="email" 
+          id="email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <div class="alert alert-danger" [hidden]="email.valid"> The email is required </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" required #password="ngModel" [(ngModel)]="user.password"
+          placeholder="Scrivi la tua password"  
+          class="form-control" id="password">
+          <div class="alert alert-danger" [hidden]="password.valid"> The password is required </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]='registerform.invalid'>Registrati</button>
+      </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-5 mb-5 sfondo">
+    <h2>Lasciaci un tuo commento!</h2>
+    <form > 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="inputname" name="inputname" [(ngModel)]="inputname" placeholder="Inserisci nome">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Scrivi il tuo commento:</label>
+            <textarea class="form-control" name="inputtext" [(ngModel)]="inputtext" placeholder="Scrivi il commento qui" id="inputtext" rows="8">{{inputtext}}</textarea>
+          </div>
+          <button (click)="mostracommento()" type="button" class="btn btn-outline-danger">Invia</button>
+          <button (click)="cancellacommento()" type="button" class="btn btn-outline-danger ml-3">Cancella</button>
+
+    </form>
+
+    <div *ngIf ="showcomment" class="mt-5">
+       <h5>{{inputname}}</h5>
+       
+       <p>{{inputtext}}</p>
+    </div>
+</div>
